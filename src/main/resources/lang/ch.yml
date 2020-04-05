@@ -11,6 +11,7 @@ messages:
     using-language: "&7运用 &a中文 &7消息!"
     new-version: "&c现在有新版本的CitizensCMD:"
     papi-available: "&7运用 &aPlaceholderAPI&7!"
+    bossshop-available: "&7运用 &aBossShopPro&7!"
     vault-available: "&7运用 &aVault&7!"
   commands:
     npc-add-command-added: "&a你已經成功新增指令到這個npc!"

@@ -11,6 +11,7 @@ messages:
     using-language: "&7Using &aEnglish &7messages!"
     new-version: "&cA new version of CitizensCMD is now available:"
     papi-available: "&7Using &aPlaceholderAPI&7!"
+    bossshop-available: "&7Using &aBossShopPro&7!"
     vault-available: "&7Using &aVault&7!"
   commands:
     npc-add-command-added: "&aYou have successfully added a command to the NPC!"

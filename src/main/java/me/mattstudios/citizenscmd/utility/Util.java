@@ -22,8 +22,10 @@ import me.clip.placeholderapi.PlaceholderAPI;
 import me.mattstudios.citizenscmd.CitizensCMD;
 import net.citizensnpcs.api.CitizensAPI;
 import net.citizensnpcs.api.npc.NPC;
+import org.black_ixx.bossshop.core.BSShop;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.Sound;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -178,6 +180,22 @@ public class Util {
     }
 
     /**
+     * Bossshop open shop method
+     *
+     * @param player The player to be sent the shop
+     * @param shop_name the shop name
+     */
+    private static void openShop(Player player, String shop_name) {
+        BSShop shop =  CitizensCMD.getBossShop().getShop(shop_name);
+        if (shop == null) {
+            player.sendMessage(ChatColor.RED + "Shop " + shop_name + " not found...");
+            return;
+        }
+
+        CitizensCMD.getBossShop().openShop(player, shop);
+    }
+
+    /**
      * Does the main commands for both left and right clicks.
      *
      * @param plugin    The CitizensCMD plugin.
@@ -254,6 +272,10 @@ public class Util {
                             player.playSound(player.getLocation(), Sound.valueOf(matcher.group(1)), Float.parseFloat(matcher.group(2)), Float.parseFloat(matcher.group(3)));
                         }
                     }, (int) delay * 20);
+                    break;
+
+                case "bossshop":
+                    getScheduler().runTaskLater(plugin, () -> openShop(player, commands.get(finalI)), (int) delay * 20);
                     break;
 
                 default:

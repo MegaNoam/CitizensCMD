@@ -9,6 +9,7 @@ public enum Messages {
     USING_LANGUAGE("messages.start-up.using-language"),
     STARTUP_NEW_VERSION("messages.start-up.new-version"),
     PAPI_AVAILABLE("messages.start-up.papi-available"),
+    BOSSSHOP_AVAILABLE("messages.start-up.bossshop-available"),
     VAULT_AVAILABLE("messages.start-up.vault-available"),
 
     /**

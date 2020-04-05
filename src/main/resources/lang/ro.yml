@@ -11,6 +11,7 @@ messages:
     using-language: "&7Utilizarea mesajelor în &aRomână&7!"
     new-version: "&cO nouă versiune a CitizensCMD este acum disponibilă:"
     papi-available: "&7Utilizarea &aPlaceholderAPI&7!"
+    bossshop-available: "&7Utilizarea &aBossShopPro&7!"
     vault-available: "&7Utilizarea &aVault&7!"
   commands:
     npc-add-command-added: "&aAti adaugat cu succes o comanda acestui NPC!"

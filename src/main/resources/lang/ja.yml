@@ -11,6 +11,7 @@ messages:
     using-language: "&a日本語 &7メッセージを使用！"
     new-version: "&cCitizensCMDの新しいバージョンが利用可能:"
     papi-available: "&aPlaceholderAPI&7を使用！"
+    bossshop-available: "&aBossShopPro&7を使用！"
     vault-available: "&aVault&7を使用！"
   commands:
     npc-add-command-added: "&aNPCにコマンドが正常に追加されました！"

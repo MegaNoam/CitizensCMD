@@ -11,6 +11,7 @@ messages:
     using-language: "&7Bruker &aNorske &7meldinger!"
     new-version: "&cEn ny versjon av CitizensCMD er nå tilgjengelig:"
     papi-available: "&7Bruker &aPlaceholderAPI&7!"
+    bossshop-available: "&7Bruker &aBossShopPro&7!"
     vault-available: "&7Bruker &aVault&7!"
   commands:
     npc-add-command-added: "&aDu har lagt til kommandoen til NPCen!"

@@ -11,6 +11,7 @@ messages:
     using-language: "&7Používám &aČeské &7zprávy!"
     new-version: "&cNová verze CitizensCMD je dostupná:"
     papi-available: "&7Používám &aPlaceholderAPI&7!"
+    bossshop-available: "&7Používám &aBossShopPro&7!"
     vault-available: "&7Používám &aVault&7!"
   commands:
     npc-add-command-added: "&aPříkaz pro NPC úspěšně zadán!"

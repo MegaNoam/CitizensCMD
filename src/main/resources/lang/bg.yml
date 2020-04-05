@@ -11,6 +11,7 @@ messages:
     using-language: "&7Използване на &aбългарски &7съобщения!"
     new-version: "&cВече е налична нова версия на CitizensCMD:"
     papi-available: "&7Използване &aPlaceholderAPI&7!"
+    bossshop-available: "&7Използване &aBossShopPro&7!"
     vault-available: "&7Използване &aVault&7!"
   commands:
     npc-add-command-added: "&aУспешно добавихте команда към NPC-то!"

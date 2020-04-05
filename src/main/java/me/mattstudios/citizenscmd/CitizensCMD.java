@@ -19,15 +19,7 @@
 package me.mattstudios.citizenscmd;
 
 import me.mattstudios.citizenscmd.api.CitizensCMDAPI;
-import me.mattstudios.citizenscmd.commands.AddCommand;
-import me.mattstudios.citizenscmd.commands.CooldownCommand;
-import me.mattstudios.citizenscmd.commands.EditCommand;
-import me.mattstudios.citizenscmd.commands.HelpCommand;
-import me.mattstudios.citizenscmd.commands.ListCommand;
-import me.mattstudios.citizenscmd.commands.PermissionCommand;
-import me.mattstudios.citizenscmd.commands.PriceCommand;
-import me.mattstudios.citizenscmd.commands.ReloadCommand;
-import me.mattstudios.citizenscmd.commands.RemoveCommand;
+import me.mattstudios.citizenscmd.commands.*;
 import me.mattstudios.citizenscmd.files.CooldownHandler;
 import me.mattstudios.citizenscmd.files.DataHandler;
 import me.mattstudios.citizenscmd.files.LangHandler;
@@ -42,8 +34,10 @@ import me.mattstudios.citizenscmd.utility.DisplayFormat;
 import me.mattstudios.citizenscmd.utility.Messages;
 import me.mattstudios.mf.base.CommandManager;
 import net.milkbowl.vault.economy.Economy;
-import org.bstats.bukkit.Metrics;
+import org.black_ixx.bossshop.BossShop;
+import org.black_ixx.bossshop.api.BossShopAPI;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -54,10 +48,7 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.stream.Stream;
 
-import static me.mattstudios.citizenscmd.utility.Util.HEADER;
-import static me.mattstudios.citizenscmd.utility.Util.TAG;
-import static me.mattstudios.citizenscmd.utility.Util.disablePlugin;
-import static me.mattstudios.citizenscmd.utility.Util.setUpMetrics;
+import static me.mattstudios.citizenscmd.utility.Util.*;
 import static me.mattstudios.utils.MessageUtils.color;
 import static me.mattstudios.utils.MessageUtils.info;
 import static me.mattstudios.utils.YamlUtils.copyDefaults;
@@ -71,6 +62,7 @@ public final class CitizensCMD extends JavaPlugin {
 
     private static CitizensCMDAPI api;
     private static Economy economy;
+    private static BossShop bossShop;
 
     private boolean papi = false;
     private CommandManager commandManager;
@@ -97,10 +89,11 @@ public final class CitizensCMD extends JavaPlugin {
 
         commandManager = new CommandManager(this);
 
-        Metrics metrics = new Metrics(this);
-        setUpMetrics(metrics, getConfig());
+//        Metrics metrics = new Metrics(this);
+//        setUpMetrics(metrics, getConfig());
 
-        info(color(TAG + "&3Citizens&cCMD &8&o" + getDescription().getVersion() + " &8By &3Mateus Moreira &c@LichtHund"));
+        info(color(TAG + "&3Citizens&cCMD &8" + getDescription().getVersion() + " &f&8By &3Mateus Moreira &c@LichtHund"));
+        info(color(TAG + "&3Citizens&cCMD &8" + getDescription().getVersion() + " &f&3BossShop Support &8By &c@MegaNoam"));
 
         permissionsManager = new PermissionsManager(this);
 
@@ -118,6 +111,10 @@ public final class CitizensCMD extends JavaPlugin {
         if (hasPAPI()) {
             info(color(TAG + lang.getMessage(Messages.PAPI_AVAILABLE)));
             papi = true;
+        }
+
+        if (hasBossShop()) {
+            info(color(TAG + lang.getMessage(Messages.BOSSSHOP_AVAILABLE)));
         }
 
         if (setupEconomy()) {
@@ -177,6 +174,21 @@ public final class CitizensCMD extends JavaPlugin {
      */
     private boolean hasPAPI() {
         return Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI");
+    }
+
+    /**
+     * Checks if BossShopPro is installed or not on the server
+     *
+     * @return Returns true if BossShopPro is found and false if not
+     */
+    private boolean hasBossShop() {
+        Plugin plugin = Bukkit.getPluginManager().getPlugin("BossShopPro");
+
+        if (plugin == null)
+            return false;
+
+        bossShop = (BossShop) plugin;
+        return true;
     }
 
     /**
@@ -381,6 +393,10 @@ public final class CitizensCMD extends JavaPlugin {
 
     public static CitizensCMDAPI getApi() {
         return api;
+    }
+
+    public static BossShopAPI getBossShop() {
+        return bossShop.getAPI();
     }
 
     /**
