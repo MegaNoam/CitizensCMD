@@ -16,6 +16,7 @@ Need help? Check out the [wiki](https://github.com/ipsk/CitizensCMD/wiki) for mo
 
   + [Project page](https://www.spigotmc.org/resources/citizens-cmd.30224/)
   + [Citizens page](https://www.spigotmc.org/resources/citizens.13811/)
+  + [BossShopPro page](https://www.spigotmc.org/resources/bossshoppro-the-most-powerful-chest-gui-shop-menu-plugin.222/)
   + [Wiki](https://github.com/ipsk/CitizensCMD/wiki)
   + [Issues](https://github.com/ipsk/CitizensCMD/issues)
 
@@ -24,3 +25,6 @@ Need help? Check out the [wiki](https://github.com/ipsk/CitizensCMD/wiki) for mo
 + **Mateus Moreira** - LichtHund - [@LichtHund](https://twitter.com/LichtHund)
 
 *A special thanks to **Glare** - [darbyjack](https://github.com/darbyjack); For helping me build this.*
+
+## BossShopPro
+Added the option to open shops GUI via the BossShopPro plugin
